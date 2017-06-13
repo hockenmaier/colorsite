@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="jumbo">
-    <h2>Welcome to the Flask app<h2>
-    <h3>This is the home page which will soon be replaced with the color picker page!<h3>
-  </div>
+<body>
+<h2>Pick a Color</h2>
+<canvas width=50 height=1000 id="canvas_picker">Please update your browser :)</canvas>
+</body>
+<script src="{{ url_for('static', filename='js/colorpick.js') }}"></script>
 {% endblock %}

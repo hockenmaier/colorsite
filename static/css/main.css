@@ -1,3 +1,9 @@
+#canvas_picker{
+    border: 1px solid black
+}
+
+/*
+
 body {
   margin: 0;
   padding: 0;
@@ -5,9 +11,11 @@ body {
   color: #444;
 }
 
+*/
 /*
  * Create dark grey header with a white logo
  */
+/*
 
 header {
   background-color: #2B2B2B;
@@ -33,7 +41,7 @@ header h1.logo:hover {
 /*
  * Center the body content
  */
-
+/*
 .container {
   width: 940px;
   margin: 0 auto;
@@ -64,10 +72,11 @@ h3 {
 }
 
 ...
-
+*/
 /*
  * Display navigation links inline
  */
+/*
 
 .menu {
   float: right;
@@ -86,3 +95,4 @@ h3 {
   color: #999;
   text-decoration: none;
 }
+*/
