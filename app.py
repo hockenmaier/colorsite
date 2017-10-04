@@ -3,6 +3,7 @@
 # This needs to be cleaned, some dependencies are not needed and the html variable is unused now.
 
 from flask import Flask, render_template
+
 # from redis import Redis, RedisError
 # import os
 # import socket
@@ -11,7 +12,6 @@ from flask import Flask, render_template
 # redis = Redis(host="redis", db=0, socket_connect_timeout=2, socket_timeout=2)
 
 app = Flask(__name__)
-
 
 @app.route("/")
 def home():

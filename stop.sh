@@ -1,3 +1,5 @@
 #!/bin/bash
+echo 'cd c:/projects/colorsite'
 cd c:/projects/colorsite
-docker stop $(docker ps -aq)
+echo 'docker swarm leave --force'
+docker swarm leave --force
