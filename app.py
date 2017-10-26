@@ -3,6 +3,9 @@
 # This needs to be cleaned, some dependencies are not needed and the html variable is unused now.
 
 from flask import Flask, render_template
+from flask_pymongo import PyMongo
+from pymongo import MongoClient
+from datetime import datetime
 
 # from redis import Redis, RedisError
 # import os
@@ -10,13 +13,45 @@ from flask import Flask, render_template
 
 # Connect to Redis
 # redis = Redis(host="redis", db=0, socket_connect_timeout=2, socket_timeout=2)
-
+print 'starting app'
 app = Flask(__name__)
+print 'hooking up client to colorsite database'
+client = MongoClient('192.168.99.100', 27017)
+db = client.colorsite
+print 'inserting'
 
+db.colors.insert_one(
+            {
+                "metadata": {
+                    "color": "FFFFFF",
+                    "IP": "127.0.0.1",
+                    "timestamp": datetime.now(),
+                    "iteration" : 'oh heerrro'
+                }
+            }
+        )
+
+
+insertlist = range(1,50)
+for i in insertlist:
+    db.colors.insert_one(
+            {
+                "metadata": {
+                    "color": "FFFFFF",
+                    "IP": "127.0.0.1",
+                    "timestamp": datetime.now(),
+                    "iteration" : "iteration is now " + str(i)
+                }
+            }
+        )
+
+
+print 'done'
 @app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template("home.html")
     # return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname(), visits=visits)
+
 
 
 @app.route("/results")
